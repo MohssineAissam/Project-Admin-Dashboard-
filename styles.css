@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Roboto' sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #e2e8f0;
 }
 .container{
@@ -21,7 +21,11 @@ body{
     padding: 20px;
     grid-template-rows: auto auto 1fr;
     gap: 50px;
+    /* height: 100vh; */
 }
+/* .nav-item, .nav-menu, .sidebar {
+    border: 1px solid red;
+} */
 .logo{
     display: grid;
     grid-template-columns: auto 1fr;
@@ -29,46 +33,63 @@ body{
     gap: 10px;
     font-size: 24px;
     font-weight: 700;
+    color: white;
 }
 .logo-icon{
     width: 40px;
     height: 40px;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #1992d4;
     font-weight: bold;
+    color: white;
 }
-.nav-menu{
+.logo-icon img{
+    filter:invert(1);
+}
+.first-nav-menu{
     display: grid;
-    gap: 15px;
+    gap: 10px;
+    align-items: start;
+    margin: 0;        
+    padding: 0;  
+}
+.second-nav-menu{
+    padding-top: 20px;
 }
 .nav-item{
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 15px;
-    padding: 10px 0;
+    padding: 10px;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.2s;
+    height: 48px;
+    box-sizing: border-box;
 }
 .nav-item:hover{
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-nav-icon{
+.nav-icon{
     width: 24px;
     height: 24px;
-    background: white;
+    /* background: white; */
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    column-rule: #1992d4;
+    /* column-rule: #1992d4; */
     font-size: 14px;
+    color: white;
+}
+.nav-icon img {
+  filter: invert(1);
 }
 .header{
     background-color: white;
@@ -94,7 +115,7 @@ nav-icon{
 .search-icon{
     width: 24px;
     height: 24px;
-    background: #e2e8f0;
+    /* background: #e2e8f0; */
     border-radius: 50%;
 }
 .search-bar{
@@ -113,16 +134,16 @@ nav-icon{
     gap: 20px;
 }
 .notification-icon{
-    width: 20px;
-    height: 20px;
-    background: #6b7280;
+    width: 25px;
+    height: 25px;
+    /* background: #6b7280; */
     border-radius: 50%;
     cursor: pointer;
 }
 .user-avatar{
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #d6ea66 0%, #fac229 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -130,9 +151,13 @@ nav-icon{
     color: white;
     font-weight: bold;
 }
+.user-avatar img{
+    width: 35px;
+    height: 35px;
+}
 .username{
-    font-weight: 500px;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 16px;
 }
 .header-bottom{
     display: grid;
@@ -149,7 +174,7 @@ nav-icon{
 .large-avatar{
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #d6ea66 0%, #fac229 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -157,6 +182,10 @@ nav-icon{
     color: white;
     font-weight: bold;
     font-size: 24px;
+}
+.large-avatar img{
+    width: 50px;
+    height: 50px;
 }
 .greeting-text h3{
     font-size: 14px;
@@ -167,21 +196,161 @@ nav-icon{
     font-size: 24px;
     font-weight: 700;
 }
-.action-buttons{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+.header-buttons{
+    display: flex;
+    justify-content: flex-end; 
     gap: 20px;
 }
 .btn{
     background-color: #1992d4;
     color: white;
     border-radius: 25px;
-    padding: 12px 24px;
+    padding: 16px 24px;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s;
     border: none;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    font-weight: bold;
 }
 .btn:hover{
     background-color: #1976d2;
+}
+.main-content{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+}
+.project-section{
+    display: grid;
+    gap: 20px;
+}
+.section-title{
+    font-size: 20px;
+    font-weight: 500;
+    color:#374151 ;
+    gap: 0;
+    margin: 0;
+}
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap: 25px;
+}
+
+.project-card{
+    display: grid;
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 8px solid #f59e0b;
+    gap: 15px;
+}
+.project-card h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+.project-card p{
+    color: #000000;
+    line-height: 1.6;
+}
+.project-icons{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: end;
+    gap: 15px;
+    margin-top: 10px;
+}
+.action-icon{
+    width: 24px;
+    height: 24px;
+    /* background: #6b7280; */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.action-icon:hover{
+    background-color: #cfcece;
+}
+.sidebar-content{
+    display: grid;
+    gap: 30px;
+}
+.announcments, .trending{
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* margin: 0px; */
+}
+.announcments h2, .trending h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 20px;
+}
+.announcments-item{
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+.announcments-item:last-child{
+    border-bottom: none;
+}
+.announcments-item h4{
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 5px;
+}
+.announcments-item p {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+.trending-item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+.trending-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+.trending-info h4{
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+.trending-info p{
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.4;
+
+}
+.trending-title{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+.trending-avatar img{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
